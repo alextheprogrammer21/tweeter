@@ -1,0 +1,42 @@
+
+
+.tweet-container article {
+  border: 2px solid red;
+  text-align: left;
+
+  /* DO THE BEFORE AFTER THING TO MAKE IT HOVER STATE */
+
+}
+
+.tweet-container article footer {
+  border-top: 2px solid black;
+  text-align: left;
+  font-size: small;
+
+}
+
+.tweet-container article header {
+
+  margin: 5px;
+}
+
+.tweet-container article header span{
+  text-align: right;
+  color: red;
+  position: relative;
+  padding-left: 80%;
+  
+}
+.tweet-container img {
+  max-width:3%;
+    height:auto;
+}
+
+.tweet-container header h4 {
+  font-family: 'Source Sans Pro';
+  color:black;
+
+}
+.tweet-container {
+  padding: 30px;
+}

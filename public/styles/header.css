@@ -1,0 +1,24 @@
+.profilePic {
+  background-color: orange;
+  height:400px;
+}
+
+.profileImage {
+  /* position: absolute; */
+  background-color: orange; 
+  /* TRANSPARENT?? */
+  max-height: 200px;
+  
+}
+
+.profileName {
+
+  text-align: center;
+}
+
+.profileImage img {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  
+}

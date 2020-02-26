@@ -1,0 +1,19 @@
+
+
+textarea {
+  text-align: center;
+  width: 80%;
+  display:inline-block;
+}
+
+#tweet-button {
+  font-family: 'Bungee';
+  background-color: blue;
+  color: white;
+  position: absolute;
+}
+
+main form .counter {
+  color: black;
+  font-family: 'Bungee';
+}

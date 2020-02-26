@@ -6,24 +6,66 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300i,700i&display=swap" rel="stylesheet">
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css"/>
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/compose-character-counter.js"></script>
+
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <div class = "logo">
+      <span class="logo-text">tweeter</span>
+      </div>
     </nav>
 
+    <header>
+      <div class = "profilePic">
+        <div class = "profileImage">
+          <img src="/images/profile-hex.png"> 
+          <h2 class = profileName>Alex123</h2>
+          </div>
+      </div>
+      <br>
+
+  </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section>
+        <h2 id= compose_tweet>Compose Tweet</h2>
+        <form id=tweet-input-form method = "POST" action="/tweets">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input id=tweet-button type="submit" value="Tweet"> 
+          <span class="counter">140</span> 
+        </form>
+      </section>
+
+      <div class = tweet-container> 
+        <article> 
+          <header>
+            <img src="/images/icon.png">
+           Alex123
+           <span>@Alex123</span>
+          </header>
+          <p>Wow! What a tweeterific app!</p>
+          <footer>10 days ago</footer>
+        </article>
+      </div>
+      <p> LOreum ipsum dipsum dixie pixie </p>
+    </main>
+
   </body>
 </html>
