@@ -1,5 +1,4 @@
 $(document).ready( () => {
-  console.log("Everything is ready lol");
   
   const $inputForm = $('main #tweet-input-form textarea');
   let $countValue = $('.counter')[0].textContent;
