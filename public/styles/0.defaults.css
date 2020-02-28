@@ -1,0 +1,71 @@
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'sans-serif';
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  min-height: 100%;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+main .error {
+  padding: 20px;
+  background-color: #f44336; 
+  color: white;
+  margin-bottom: 15px;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+textarea {
+  text-align: center;
+  width: 80%;
+  display:inline-block;
+}
+
+#tweet-button {
+  font-family: 'Bungee';
+  background-color: blue;
+  color: white;
+  position: absolute;
+}
+
+main form .counter {
+  color: black;
+  font-family: 'Bungee';
+} */

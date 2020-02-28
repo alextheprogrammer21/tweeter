@@ -1,7 +1,4 @@
 const escape =  function(str) {
-  
-
-
 
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -9,8 +6,26 @@ const escape =  function(str) {
 }
 
 $(document).ready( () => {
+  $('main .error').slideUp();
+  $('main compose').slideUp();
 
 
+
+  //-------------------------------Nav bar button stuff-------------------------
+
+  $("nav new-tweet img").hover(function(){
+    $(this).css("margin-top", "10%");
+
+    }, function(){
+    $(this).css("margin-top", "0%");
+  });
+
+
+  $('nav new-tweet').click( () => {
+    // $('main section').animate({opacity: '100%'})
+    $('main compose').slideToggle("slow");
+  });
+  //----------------------------Tweet loading stuff-----------------------------
 
   const hitServer = (method) => {
     return $.ajax('/tweets', { method })
@@ -26,25 +41,40 @@ $(document).ready( () => {
 
     let $textValue = $('main textarea')[0].value;
 
+
+    //------------------------------Tweet length error stuff-----------------------
     if ($textValue.length < 1) {
-      return alert("Please input some text");
+        $('main .error').slideDown();
+        
+        setTimeout( () => {
+          $('main .error').slideUp();
+        }, 3000)
+
+        return null;
     }
 
     if ($textValue.length > 140) {
-      return alert("Sorry mate but 140 characters only");
+        $('main .error').slideDown();
+
+        setTimeout( () => {
+          $('main .error').slideUp();
+        }, 3000)
+
+        return null;
     }
 
+    //-------------------------------Other important stuff----------------------------
 const safeHTML = `<p>${escape($textValue)}</p>`;
 
     // $.ajax('/tweets', { method: 'GET' })
     // .then((response) => {
       let obj = [{"user": {avatars: "https://i.imgur.com/73hZDYK.png",
                         handle: "@JohnSnow",
-                        name:   "Craig"},
+                        name:   "Hashtag Firstname"},
                       
                 "content": {text: safeHTML},
                 
-                "created_at": 1461116232227 }]
+                "created_at": "today" }]
 
       // $loadtweets().then(renderTweets);
       

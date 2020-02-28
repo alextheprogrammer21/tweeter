@@ -1,0 +1,36 @@
+@media screen and (max-width: 768px) {
+
+  nav {
+    height: 0px !important;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  profile profile-box {
+    margin-left: 0%;
+  margin-top: 0%;
+  height: 300px;
+  width: 100vw;
+  }
+
+  nav div {
+    position: relative !important;
+  }
+
+  nav div new-tweet {
+    margin-top: 10%;
+  }
+
+  functionality {
+    width: 100vw;
+  }
+
+  profile profile-box username {
+    position: relative !important;
+    margin-bottom: 8%;
+    margin-top:0%;
+    margin-left: 37%;
+  }
+}

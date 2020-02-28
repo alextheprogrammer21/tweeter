@@ -1,0 +1,82 @@
+nav {
+  height: 100px;
+  width: 100%;
+  z-index: 2;
+  background-color: #4056A1;
+  color: #ffffff;
+
+  display:flex;
+  justify-content: space-between;
+}
+
+nav div {
+  max-height: 80%;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+nav div new-tweet {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+nav div new-tweet img {
+  height: 30%;
+  width: auto;
+}
+nav div h5 {
+  font-family: 'Bungee';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .logo {
+    height: 100px;
+    width: 100%;
+    z-index: 10;
+    background-color: #4056A1;
+    color: #ffffff;
+    
+  }
+
+  .logo-text {
+    margin: 1.5em;
+    text-align: left;
+    
+  }
+
+  #random {
+    margin-left: 70%;
+    margin-top: 20%;
+    text-align: right;
+  }
+
+  nav h6 {
+    color: red;
+    text-align: right;
+    margin-right: 10%;
+    margin-top: 0%
+
+  } */
