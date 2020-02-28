@@ -1,24 +1,13 @@
-const escape =  function(str) {
-
-  let div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
-
 $(document).ready(() => {
   $('main .error').slideUp();
   $('main compose').slideUp();
 
 
-  $(".tweet-container article").hover(function() {
-    $(".tweet-container div2 img").css("opacity", "100%");
-  }, function() {
-    $(".tweet-container div2 img").css("opacity", "0%");
-  });
+ 
 
 
 
-  //-------------------------------Nav bar button stuff-------------------------
+  //-------------------------------Nav bar buttons-------------------------
 
   $("nav new-tweet img").hover(function() {
     $(this).css("margin-top", "10%");
@@ -33,7 +22,7 @@ $(document).ready(() => {
     $('main compose').slideToggle("slow");
     $('main textarea').focus();
   });
-  //----------------------------Tweet loading stuff-----------------------------
+  //----------------------------New tweets from navbar-----------------------------
 
   const hitServer = (method) => {
     return $.ajax('/tweets', { method });
@@ -49,7 +38,7 @@ $(document).ready(() => {
 
     let $textValue = $('main textarea')[0].value;
     $('main textarea')[0].value = "";
-    //------------------------------Tweet length error stuff-----------------------
+    //------------------------------Submitting New Tweets-----------------------
     if ($textValue.length < 1) {
       $('main .error').slideDown();
         
@@ -70,7 +59,16 @@ $(document).ready(() => {
       return null;
     }
 
-    //-------------------------------Other important stuff----------------------------
+    $(".tweet-container article").hover(function() {
+      $(".tweet-container div2 img").css("opacity", "100%");
+    }, function() {
+      $(".tweet-container div2 img").css("opacity", "0%");
+    });
+
+    //-------------------------------Rendering New Tweets----------------------------
+
+  
+
     const safeHTML = `<p>${escape($textValue)}</p>`;
 
     // $.ajax('/tweets', { method: 'GET' })
@@ -91,7 +89,6 @@ $(document).ready(() => {
 
   });
 
-  
   const renderTweets = function(tweets) {
     
     for (let tweet of tweets) {
@@ -120,5 +117,14 @@ $(document).ready(() => {
     return $($tweet);
   };
   
-  
 });
+
+
+//------------------------Helper Functions-------------------------------
+
+const escape =  function(str) {
+
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
