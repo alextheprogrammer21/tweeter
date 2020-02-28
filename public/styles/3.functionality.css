@@ -9,7 +9,7 @@ functionality {
 }
 
 functionality compose textarea {
-  width: 40vw;
+  width: 60vw;
   /* font-weight: bold; */
   border: none;
 }
@@ -20,6 +20,16 @@ functionality compose input {
   font-family: bungee;
 }
 
+functionality compose .counter {
+  position:relative !important;
+  margin-left: 70%;
+}
+/* functionality compose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+} */
 /* functionality compose span {
   margin-left: 65%;
   color: black;
