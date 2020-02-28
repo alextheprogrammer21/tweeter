@@ -22,8 +22,8 @@ Tweeter is a simple Twitter clone built with Node and Express. It is an asynchro
 
 ## Final Product
 
-!["screenshot of URLs page"](https://github.com/alextheprogrammer21/tinyapp/blob/master/docs/urlIndexPage.png?raw=true)
-!["screenshot edit URLs page"](https://github.com/alextheprogrammer21/tinyapp/blob/master/docs/urlEditPage.png?raw=true)
+!["screenshot of URLs page"](https://github.com/alextheprogrammer21/tweeter/blob/master/public/images/screenshot_1.png?raw=true)
+!["screenshot edit URLs page"](https://github.com/alextheprogrammer21/tweeter/blob/master/public/images/screenshot_2.png?raw=true)
 
 ## Dependencies
 
