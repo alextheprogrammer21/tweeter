@@ -3,22 +3,19 @@ $(document).ready( () => {
   const $inputForm = $('main #tweet-input-form textarea');
   let $countValue = $('.counter')[0].textContent;
   
-  $inputForm.keydown( (event) => {
+  $inputForm.on("keyup", (event) => {
     
     let $inputLength = event.target.textLength;
     
-    if(event.originalEvent.key == 'Backspace' || event.originalEvent.key == 'Delete') {
-      $inputLength -=2;
-    }
 
-    $('.counter').text(140 - $inputLength-1);
+    $('.counter').text(140 - $inputLength);
 
     
     if ($inputLength > 140) {
       $('.counter').css("color", "red");
     }
 
-    if ($inputLength < 140) {
+    if ($inputLength <= 140) {
       $('.counter').css("color", "black");
     }
   });

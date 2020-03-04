@@ -8,8 +8,6 @@ $(document).ready(() => {
   $('main compose').slideUp();
 
 
- 
-  //----------------------Random Name----------------------
   
 
 
@@ -43,7 +41,6 @@ $(document).ready(() => {
     event.preventDefault();
 
     let $textValue = $('main textarea')[0].value;
-    $('main textarea')[0].value = "";
     //------------------------------Submitting New Tweets-----------------------
     if ($textValue.length < 1) {
       $('main .error').slideDown();
@@ -64,6 +61,9 @@ $(document).ready(() => {
 
       return null;
     }
+
+    $('main textarea')[0].value = "";
+    $('.counter').text(140);
 
     $(".tweet-container article").hover(function() {
       $(".tweet-container div2 img").css("opacity", "100%");
