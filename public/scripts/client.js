@@ -1,10 +1,16 @@
+function generateRandomName() {
+  return (Math.random().toString(36).substring(2, 15)).slice(0,6);
+};
+
+
 $(document).ready(() => {
   $('main .error').slideUp();
   $('main compose').slideUp();
 
 
  
-
+  //----------------------Random Name----------------------
+  
 
 
   //-------------------------------Nav bar buttons-------------------------
@@ -73,9 +79,10 @@ $(document).ready(() => {
 
     // $.ajax('/tweets', { method: 'GET' })
     // .then((response) => {
+      let handle = "@" + generateRandomName();
     let obj = [{"user": {avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@JohnSnow",
-      name:   "Hashtag Firstname"},
+      handle: handle,
+      name:   generateRandomName()},
                       
     "content": {text: safeHTML},
                 
