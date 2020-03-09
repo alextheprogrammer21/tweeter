@@ -1,7 +1,10 @@
 function generateRandomName() {
   return (Math.random().toString(36).substring(2, 15)).slice(0,6);
+
 };
 
+let obj = {};
+  let counter = 1;
 
 $(document).ready(() => {
   $('main .error').slideUp();
@@ -14,10 +17,10 @@ $(document).ready(() => {
   //-------------------------------Nav bar buttons-------------------------
 
   $("nav new-tweet img").hover(function() {
-    $(this).css("margin-top", "10%");
+    $(this).css("margin-top", "0%");
 
   }, function() {
-    $(this).css("margin-top", "0%");
+    $(this).css("margin-top", "-10%");
   });
 
 
@@ -37,7 +40,7 @@ $(document).ready(() => {
     return hitServer('GET');
   };
 
-  $('#tweet-input-form').submit((event) => {
+  $('#tweet-input-form').submit((event) => {  //START OF SUBMIT BUTTON CLICK
     event.preventDefault();
 
     let $textValue = $('main textarea')[0].value;
@@ -65,11 +68,11 @@ $(document).ready(() => {
     $('main textarea')[0].value = "";
     $('.counter').text(140);
 
-    $(".tweet-container article").hover(function() {
-      $(".tweet-container div2 img").css("opacity", "100%");
-    }, function() {
-      $(".tweet-container div2 img").css("opacity", "0%");
-    });
+    // $(".tweet-container article").hover(function() {
+    //   $(".tweet-container div2 img").css("opacity", "100%");
+    // }, function() {
+    //   $(".tweet-container div2 img").css("opacity", "0%");
+    // });
 
     //-------------------------------Rendering New Tweets----------------------------
 
@@ -80,7 +83,7 @@ $(document).ready(() => {
     // $.ajax('/tweets', { method: 'GET' })
     // .then((response) => {
       let handle = "@" + generateRandomName();
-    let obj = [{"user": {avatars: "https://i.imgur.com/73hZDYK.png",
+    obj[counter] = [{"user": {avatars: "https://i.imgur.com/73hZDYK.png",
       handle: handle,
       name:   generateRandomName()},
                       
@@ -89,8 +92,8 @@ $(document).ready(() => {
     "created_at": "today" }];
 
     // $loadtweets().then(renderTweets);
-      
-    renderTweets(obj);
+      counter++;
+    renderTweets(obj[counter-1]);
       
     // })
 
@@ -117,6 +120,7 @@ $(document).ready(() => {
      <p>${tweet.content.text}</p>
      <footer>
        ${tweet.created_at}
+       <div2><img src="/images/twiticons.png"> </div2>
      </footer>
     </article>
    `;

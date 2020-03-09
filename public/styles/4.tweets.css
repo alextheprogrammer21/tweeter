@@ -1,13 +1,21 @@
 .tweet-container div2 img {
   margin-left: 90%;
-  opacity:0%;
+  /* opacity:0%; */
 }
 
 .tweet-container article {
   border: 2px solid red;
   text-align: left;
   margin: 10px;
+  max-width: 70vw;
 
+  display:flex;
+  flex-direction: column;
+}
+
+.tweet-container article p {
+  word-wrap: break-word;
+  max-width: 100%;
 }
 
 .tweet-container article:hover {
@@ -36,7 +44,7 @@
   
 }
 .tweet-container img {
-  max-width:3%;
+  max-width:10%;
     height:auto;
 }
 
