@@ -9,13 +9,13 @@
   margin: 10px;
   max-width: 70vw;
 
-  display:flex;
-  flex-direction: column;
+  /* display:flex;
+  flex-direction: column; */
 }
 
 .tweet-container article p {
   word-wrap: break-word;
-  max-width: 100%;
+  max-width: 80%;
 }
 
 .tweet-container article:hover {

@@ -7,6 +7,7 @@ let obj = {};
 let counter = 1;
 
 $(document).ready(() => {
+  console.log("hmm test");
   $('main .error').slideUp();
   $('main compose').slideUp();
 
@@ -20,20 +21,12 @@ $(document).ready(() => {
 
   $('nav new-tweet').click(() => {
     $('main compose').slideToggle("slow");
-    $('main textarea').focus();
+    $('main textarea').focus(); 
   });
-  //----------------------------New tweets from navbar-----------------------------
-
-  const hitServer = (method) => {
-    return $.ajax('/tweets', { method });
-  };
-  
-  const $loadtweets = () => {
-    return hitServer('GET');
-  };
 
   //----------------------------Submit form---------------------------
-  $('#tweet-input-form').submit((event) => {
+
+  $('#tweet-input-form').submit(function() {
     event.preventDefault();
 
     let $textValue = $('main textarea')[0].value;
@@ -55,24 +48,16 @@ $(document).ready(() => {
       }, 3000);
 
       return null;
+    } else {
+      $.ajax('/tweets', { method: 'POST', data: $(this).serialize() })
+        .done(function() {
+          loadTweets();
+          $('textarea').parent().find('.counter').text(140);
+          $('main textarea')[0].value = "";
+        })
+      $(this).find('textarea').focus();
     }
-
-    $('main textarea')[0].value = "";
-    $('.counter').text(140);
-
-    //-------------------------------Rendering New Tweets----------------------------
-
-    const safeHTML = `<p>${escape($textValue)}</p>`;
-
-    let handle = "@" + generateRandomName();
-    obj[counter] = [{"user": {avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: handle,
-      name:   generateRandomName()},
-    "content": {text: safeHTML},
-    "created_at": "today" }];
-    counter++;
-    renderTweets(obj[counter - 1]);
-  });
+  })
 
   const renderTweets = function(tweets) {
     
@@ -93,13 +78,22 @@ $(document).ready(() => {
      </header>
      <p>${tweet.content.text}</p>
      <footer>
-       ${tweet.created_at}
+       today
        <div2><img src="/images/twiticons.png"> </div2>
      </footer>
     </article>
    `;
     return $($tweet);
   };
+
+  const loadTweets = function() {
+    $.ajax('/tweets', { method: 'GET'})
+      .done(function(data) {
+        renderTweets(data);
+        $('.tweet-container').find('textarea').val('');
+      })
+  }
+loadTweets();
 });
 
 const escape =  function(str) {
